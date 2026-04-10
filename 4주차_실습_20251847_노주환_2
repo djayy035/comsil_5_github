@@ -1,0 +1,16 @@
+
+cc = gcc
+tar = animal
+obj = main.o dog.o blackcow.o turtle.o
+
+$(tar): $(obj)
+	$(cc) -o $(tar) $(obj)
+
+$(obj) : animal_exe.h
+
+
+.PHONY : clean
+clean : 
+	rm $(tar) $(obj)
+
+
